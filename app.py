@@ -33,7 +33,12 @@ def make_prediction():
 
             prediction = round(prediction * 100, 2)
 
-            return render_template("classify.html", label=label, prediction=prediction)
+            return render_template(
+                "classify.html",
+                label=label,
+                prediction=prediction,
+                upload_image_path=upload_image_path
+            )
 
         return "Invalid image file format. Only JPG, JPEG and PNG are supported."
 
